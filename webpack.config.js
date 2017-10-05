@@ -37,8 +37,9 @@ module.exports = {
                 use: {
                     loader: 'file-loader',
                     options: {
-                        publicPath: url => Path.join(Path.basename(Path.dirname(url)), Path.basename(url)),
-                        name: '[entryName]/[name].[ext]',
+                        publicPath: url => Path.basename(url),
+                        outputPath: url => Path.join(Path.dirname(Path.dirname(url)), Path.basename(url)),
+                        name: '[entryName]/[hash].[ext]',
                     }
                 },
             },
